@@ -187,11 +187,11 @@ def argmin(f, lo, hi, epsilon=1e-3):
     >>> argmin(lambda x: (x-5)**2, -20, 0)
     -0.00016935087808430278
     '''
-    mid = (hi+lo)/2
-    if (hi-lo) < epsilon:
+    mid = (hi + lo)/2
+    if (hi - lo) < epsilon:
         return mid
-    m1 = lo + (hi-lo)/6
-    m2 = lo + (hi-lo)/3
+    m1 = lo + (hi - lo)/6
+    m2 = lo + (hi - lo)/3
     min1 = argmin(f, lo, m2, epsilon=epsilon)
     min2 = argmin(f, m1, hi, epsilon=epsilon)
     if f(min1) < f(min2):
